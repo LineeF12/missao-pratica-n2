@@ -1,0 +1,47 @@
+saida = ''
+
+def adicao(a, b):
+    return a + b
+
+
+def subtracao(a, b):
+    return a - b
+
+
+def multiplicacao(a, b):
+    return a * b
+
+
+def divisao(a, b):
+    if b == 0:
+        return 'Não foi possível realizar a divisão por 0'
+    else:
+        return a / b
+    
+def calculadora(valor1, valor2, operacao):
+    if operacao in ['+', 'adicao']:
+        resultado = adicao(valor1, valor2)
+    elif operacao in ['-', 'subtracao']:
+        resultado = subtracao(valor1, valor2)
+    elif operacao in ['*', 'multiplicacao']:
+        resultado = multiplicacao(valor1, valor2)
+    elif operacao in ['/', 'divisao']:
+        resultado = divisao(valor1, valor2)
+    else:
+        resultado = 'Operação Inválida'
+    return resultado
+
+while saida.lower() != 'n':
+    valor1 = float(input("Digite um número: "))
+    valor2 = float(input('Digite outro número: '))
+    operacao = input('Digite qual operação você quer com o nome (adicao, subtracao, mutiplicacao ou divisao) ou com o simbolo (+, -, *, /): ')
+
+    resultado = calculadora(valor1, valor2, operacao)
+
+    print(f'O resultado da operação é: {resultado}')
+
+    saida = input('Deseja continuar? (sim/não): ').strip()
+
+    saida = saida.lower()
+
+print("Programa finalizado.")
